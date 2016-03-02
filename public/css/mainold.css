@@ -1,0 +1,23 @@
+   .home-button{ margin-top: 11px;}
+
+   .intWidth {
+	    border-style: inset;
+	    width: 450px;
+	}
+	.header{
+		background: #eaeaea;
+	    height: 60px;
+	    position: fixed;
+	    width: 100%;
+	    z-index: 9999;
+	} 
+	.boby-view{
+		background: #FFF;
+    	padding: 60px 0px;
+	}
+	.comments{ 
+		border: 1px solid;
+		background-color: lightgray;
+		padding: 10px;
+    	margin-bottom: 20px;
+	}

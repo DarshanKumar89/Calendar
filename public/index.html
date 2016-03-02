@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" itemscope="itemscope" itemtype="http://schema.org/Product">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Calendar</title>
+      <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+      <link href="" rel="shortcut icon" type="image/x-icon">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="/css/main.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   </head>
+   <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+   <body>
+      <header class="header">
+         <div class="container" data-ng-include="'/modules/layout/views/header.html'"></div>
+      </header>
+      <div class="content container boby-view">
+         <div data-ng-include="'/modules/notification/views/notifications.html'"></div>
+         <div data-ui-view class="ngView"></div>
+         <div data-ng-include="'/modules/main/views/devComments.html'"></div>
+      </div>
+      <footer class="footer navbar-bottom">
+         <div class="container" data-ng-include="'/modules/layout/views/footer.html'"></div>
+         </footer>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <script src="/lib/jquery/dist/jquery.js"></script>
+      <script src="/lib/angular/angular.js"></script>
+      <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="/lib/angular-cookies/angular-cookies.js"></script>
+      <script src="/lib/angular-resource/angular-resource.js"></script>
+      <script src="/lib/angular-route/angular-route.js"></script>
+      <script src="/lib/angular-sanitize/angular-sanitize.js"></script>
+      <script src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="/lib/angular-ui-utils/ui-utils.js"></script>
+      <script src="/lib/lodash/lodash.js"></script>
+      <script src="/lib/d3/d3.js"></script>
+      <script src="/lib/d3-tip/index.js"></script>
+      <script src="/lib/jquery-ui/ui/jquery-ui.js"></script>
+      <script src="/js/app.min.js"></script>
+   </body>
+</html>
+
