@@ -1,109 +1,70 @@
- <div class="app" ng-controller="mainController">
-
-      <h1 class="app__header">Birthday Cal</h1>
-
-      <div class="app__content">
-
-        <div class="intro ">
-          <div class="intro__task">
+<div class="app" ng-controller="mainController">
+   <h1 class="app__header">Birthday Cal</h1>
+   <div class="app__content">
+      <div class="intro ">
+         <div class="intro__task">
             <p>
-              <strong>Birthday Cal</strong> is a week long calendar!
+               <strong>Birthday Cal</strong> is a week long calendar!
             </p>
             <p>
-              Render a card for each day of the week.
-              For a given year, figure out whose birthday belongs to which card.
-              Place people's initials in the card according to these rules -
+               Render a card for each day of the week.
+               For a given year, figure out whose birthday belongs to which card.
+               Place people's initials in the card according to these rules -
             </p>
             <p>
-              <ul>
-                <li>Each person must always be rendered as square</li>
-                <li>Use person's initials to label birthdays</li>
-                <li>Order people inside the card based on their age (youngest to oldest)</li>
-                <li>Each square in a card must be of equal size and should fill up as much space in the card as possible</li>
-              </ul>
+            <ul>
+               <li>Each person must always be rendered as square</li>
+               <li>Use person's initials to label birthdays</li>
+               <li>Order people inside the card based on their age (youngest to oldest)</li>
+               <li>Each square in a card must be of equal size and should fill up as much space in the card as possible</li>
+            </ul>
             </p>
             <p>
-              <strong>Examples &dash;</strong>
-              <img class="intro__example" src="img/display-rules.png" />
+               <strong>Examples &dash;</strong>
+               <img class="intro__example" src="img/display-rules.png" />
             </p>
-          </div>
-          <div class="intro__helpers">
+         </div>
+         <div class="intro__helpers">
             <p>
-              <strong>Submitting your work &dash;</strong>
-              <ul>
-                <li>
+               <strong>Submitting your work &dash;</strong>
+            <ul>
+               <li>
                   Your submission should be functional within this page - see <a href="#work-area">work area</a>.
-                </li>
-                <li>
+               </li>
+               <li>
                   Write your code in pure JS.
-                </li>
-                <li>
+               </li>
+               <li>
                   Use <code>day--empty</code> class on <code>.cal__day</code> to render empty calendar dates. Use <code>.day__person</code> to render birthdays. See source.
-                </li>
-                <li>
+               </li>
+               <li>
                   Submit back the completed task as a compressed zip of this git repo with your commits on top. Feel free to share over Dropbox / Email.
-                </li>
-              </ul>
+               </li>
+            </ul>
             </p>
             <p>
-              <strong>Evaluation criteria &dash;</strong>
-              <ul>
-                <li>functionality coverage</li>
-                <li>readable and efficient code</li>
-                <li>should handle edge cases</li>
-                <li>maintainability</li>
-              </ul>
+               <strong>Evaluation criteria &dash;</strong>
+            <ul>
+               <li>functionality coverage</li>
+               <li>readable and efficient code</li>
+               <li>should handle edge cases</li>
+               <li>maintainability</li>
+            </ul>
             </p>
-
-          </div>
-        </div>
-
-        <hr class="border-line app__border" />
-
-        <div id="work-area" >
-          <h1 class="cal__title">Work Area</h1>
-          <ul class="calendar clearfix js-calendar">
-            <!-- TODO: this is marked as an empty day for purpose of illustration -->
-        <!--     <li class="cal__day day--empty" data-day="mon">
-              <div class="day__date"></div>
-              <div class="day__people"></div>
-            </li> -->
-
-            <li class="cal__day" data-day="mon"  >
-              <div class="day__date "></div>
-              <div class="day__people">
-               
-                <div class="day__person "  ng-repeat="birthday in DOB">{{birthday.initials}}</div>
-              </div>
-
-            
+         </div>
+      </div>
+      <hr class="border-line app__border" />
+      <div id="work-area " >
+         <h1 class="cal__title">Work Area</h1>
+         <ul class="calendar clearfix js-calendar">
+            <li class="cal__day col-sm-4" data-day="mon"  >
+               <div class="day__date "></div>
+               <div class="day__people row">
+                  <div class="day__person col-sm-4"  ng-repeat="birthday in DOB">{{birthday.initials}}</div>
+               </div>
             </li>
-
-
-         <!--    <li class="cal__day" data-day="wed">
-              <div class="day__date"></div>
-              <div class="day__people"></div>
-            </li>
-            <li class="cal__day" data-day="thu">
-              <div class="day__date"></div>
-              <div class="day__people"></div>
-            </li>
-            <li class="cal__day" data-day="fri">
-              <div class="day__date"></div>
-              <div class="day__people"></div>
-            </li>
-            <li class="cal__day" data-day="sat">
-              <div class="day__date"></div>
-              <div class="day__people"></div>
-            </li>
-            <li class="cal__day" data-day="sun">
-              <div class="day__date"></div>
-              <div class="day__people"></div>
-            </li> -->
-          </ul>
-
-          <div class="app__inputs">
-
+         </ul>
+         <div class="app__inputs">
             <textarea class="app__txt js-json" id="json-input" placeholder="Paste your friends list json here.">[
     {
       name: "Tyrion Lannister",
@@ -194,19 +155,13 @@
       birthday: "12/06/1984"
     }
 ]</textarea>
-
             <div class="app__actions">
-              <label>Year</label>
-              <input class="app__input js-year" type="text" value="" ng-model="year" />
-              <a class="app__button js-update" ng-click="calAge()">Update</a>
+               <label>Year</label>
+               <input class="app__input js-year" type="text" value="" ng-model="year" />
+               <a class="app__button js-update" ng-click="calculate()">Update</a>
             </div>
-
-          </div>
-
-        </div>
-
-
-        <hr class="border-line app__border" />
-
+         </div>
       </div>
-    </div>
+      <hr class="border-line app__border" />
+   </div>
+</div>
